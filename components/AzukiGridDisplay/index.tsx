@@ -5,8 +5,11 @@ import GridItem from './GridItem';
 const AzukiGridDisplay = () => {
   return (
     <div className={styles.container}>
-      <div className={styles.main}>
+      <div className={styles.desc}>
         <h2>Azuki Grid Display - Not Clickable</h2>
+      </div>
+
+      <div className={styles.main}>
         <div className={styles.grid}>
           {FiveItemLists.map((item) => (
             <div
