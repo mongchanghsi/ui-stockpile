@@ -1,4 +1,10 @@
-export const FiveItemLists = [
+export interface IFiveItemList {
+  number: number;
+  title: string;
+  content: string;
+}
+
+export const FiveItemLists: IFiveItemList[] = [
   {
     number: 1,
     title: 'Block 1',
