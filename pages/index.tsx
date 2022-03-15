@@ -1,8 +1,13 @@
 import type { NextPage } from 'next';
-import About from '../components/About';
-import AzukiGridDisplay from '../components/AzukiGridDisplay';
-import Meta from '../components/Meta';
 import styles from '../styles/Home.module.scss';
+import { FiveItemLists } from '../utils/constants/data';
+
+import About from '../components/About';
+import Meta from '../components/Meta';
+
+import AzukiGridDisplay from '../components/AzukiGridDisplay';
+import Accordion from '../components/Accordion';
+import AccordionVersion2 from '../components/AccordionVer2';
 
 const Home: NextPage = () => {
   return (
@@ -11,6 +16,8 @@ const Home: NextPage = () => {
       <main className={styles.main}>
         <About />
         <AzukiGridDisplay />
+        <Accordion data={FiveItemLists} />
+        <AccordionVersion2 data={FiveItemLists} />
       </main>
     </div>
   );

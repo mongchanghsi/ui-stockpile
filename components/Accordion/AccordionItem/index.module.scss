@@ -1,0 +1,94 @@
+@import '../../../styles/variables.module.scss';
+@import '../../../styles/mixin.module.scss';
+
+.item {
+  background-color: #ebe7e0;
+  margin: 1rem;
+  width: 80vw;
+
+  @include m {
+    width: 70vw;
+  }
+
+  @include l {
+    width: 50vw;
+  }
+}
+
+.question {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+
+  cursor: pointer;
+
+  @include m {
+    padding: 2rem;
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+
+  &_text {
+    font-size: 2rem;
+    margin: 0;
+
+    @include m {
+      font-size: 2.5rem;
+    }
+  }
+
+  &_icon {
+    transition: all 0.4s ease-out;
+
+    &_flip {
+      transform: rotate(180deg);
+    }
+  }
+}
+
+.answer {
+  padding-left: 2rem;
+  padding-right: 2rem;
+
+  opacity: 0;
+  overflow-y: hidden;
+  max-height: 0;
+  transition: all 0.5s ease-in;
+
+  @include m {
+    width: 50vw;
+    padding-left: 4rem;
+    padding-right: 6rem;
+  }
+
+  &_text {
+    font-size: 1.5rem;
+    text-align: left;
+    color: black;
+    word-wrap: break-word;
+
+    @include m {
+      font-size: 1.8rem;
+    }
+  }
+
+  &_open {
+    opacity: 1;
+    max-height: 100vh;
+
+    margin-top: -1rem;
+    padding: 1rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+
+    @include m {
+      margin-top: -2rem;
+      padding: 2rem;
+      padding-left: 4rem;
+      padding-right: 6rem;
+    }
+  }
+}
