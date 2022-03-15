@@ -7,27 +7,27 @@ export interface IFiveItemList {
 export const FiveItemLists: IFiveItemList[] = [
   {
     number: 1,
-    title: 'Block 1',
+    title: 'Title 1',
     content: 'Content 1',
   },
   {
     number: 2,
-    title: 'Block 2',
+    title: 'Title 2',
     content: 'Content 2',
   },
   {
     number: 3,
-    title: 'Block 3',
+    title: 'Title 3',
     content: 'Content 3',
   },
   {
     number: 4,
-    title: 'Block 4',
+    title: 'Title 4',
     content: 'Content 4',
   },
   {
     number: 5,
-    title: 'Block 5',
+    title: 'Title 5',
     content: 'Content 5',
   },
 ];
