@@ -7,6 +7,11 @@ const AzukiGridDisplay = () => {
     <div className={styles.container}>
       <div className={styles.desc}>
         <h2>Azuki Grid Display - Not Clickable</h2>
+        <p>
+          Azuki Grid Display is inspired from https://www.azuki.com/mindmap and
+          strictly note that it is limited to only 5 items. If you want to fit
+          more items, you should manually adjust the grid to your requirements.
+        </p>
       </div>
 
       <div className={styles.main}>
