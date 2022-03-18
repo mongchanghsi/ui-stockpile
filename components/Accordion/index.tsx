@@ -12,13 +12,13 @@ const Accordion = ({ data }: { data: IFiveItemList[] }) => {
           time
         </p>
       </div>
-      <div className={styles.main}>
+      <ul className={styles.main} aria-label='items'>
         {data.map((item) => (
-          <div key={`Accordion_${item.number}`}>
+          <div id={`Accordion_${item.number}`} key={`Accordion_${item.number}`}>
             <AccordionItem data={item} />
           </div>
         ))}
-      </div>
+      </ul>
     </div>
   );
 };
