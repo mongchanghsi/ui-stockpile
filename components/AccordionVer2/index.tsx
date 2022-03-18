@@ -44,7 +44,7 @@ const AccordionVersion2 = ({ data }: { data: IFiveItemList[] }) => {
           any point in time
         </p>
       </div>
-      <div className={styles.main}>
+      <ul className={styles.main} aria-label='items'>
         {currentData.map((item: IFiveItemList, index: number) => {
           return (
             <AccordionItem
@@ -55,7 +55,7 @@ const AccordionVersion2 = ({ data }: { data: IFiveItemList[] }) => {
             />
           );
         })}
-      </div>
+      </ul>
     </div>
   );
 };
