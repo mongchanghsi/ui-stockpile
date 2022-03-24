@@ -32,3 +32,22 @@ p {
 * {
   box-sizing: border-box;
 }
+
+.center-alignn {
+  margin-left: auto;
+  margin-right: auto;
+  width: 200px
+}
+
+.my-scroll-style {
+  width: 600px;
+  height: 600px;
+  overflow-x: scroll;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+}

@@ -8,6 +8,7 @@ import Meta from '../components/Meta';
 import AzukiGridDisplay from '../components/AzukiGridDisplay';
 import Accordion from '../components/Accordion';
 import AccordionVersion2 from '../components/AccordionVer2';
+import CustomScrollBar from '../components/CustomScrollBar';
 
 const Home: NextPage = () => {
   return (
@@ -18,6 +19,7 @@ const Home: NextPage = () => {
         <AzukiGridDisplay />
         <Accordion data={FiveItemLists} />
         <AccordionVersion2 data={FiveItemLists} />
+        <CustomScrollBar />
       </main>
     </div>
   );
