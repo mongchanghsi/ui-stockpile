@@ -9,7 +9,7 @@ import sample6 from "../../public/assets/samplePic6.png"
 
 const CustomScrollBar = () => {
   const [scroll, setScroll] = useState({ scrollX: 0, viewX: 0, scrollY: 0, viewY: 0  })
-  const onChange = (event) => {
+  const onChange = (event: any) => {
     console.log(event.target.value)
     setScroll({...scroll, scrollX:event.target.value})
   }

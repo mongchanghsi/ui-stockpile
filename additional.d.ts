@@ -8,3 +8,5 @@ interface classnames {
 }
 
 declare module 'react-typical';
+
+declare module 'auto-scroll-container'
