@@ -1,0 +1,128 @@
+@import '../../styles/variables.module.scss';
+@import '../../styles/mixin.module.scss';
+
+.container {
+  position: relative;
+  width: 100vw;
+  background-color: white;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  padding-top: 3vh;
+  padding-bottom: 3vh;
+
+  padding-left: 10vw;
+  // padding-right: 10vw;
+}
+
+.desc {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+
+  & p {
+    color: black;
+  }
+}
+
+.main {
+  position: relative;
+
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: row;
+}
+
+.grid {
+  display: grid;
+  height: 70vh;
+  width: 100%;
+  grid-template-columns: 30% 1fr;
+  padding-left: 5vw;
+  margin-top: 10vh;
+
+  & p {
+    color: black;
+  }
+}
+
+.gallery {
+  position: relative;
+  width: 100%;
+  height: 80%;
+  overflow-x: auto;
+
+  background-color: #e6e1d9;
+  border: 0.1rem solid black;
+  border-radius: 2rem 0 0 2rem;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  & ul {
+    display: flex;
+    flex-direction: row;
+    height: 80%;
+    margin: 0;
+
+    & li {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: space-between;
+      height: 100%;
+      padding-top: 5vh;
+
+      margin-left: 5rem;
+      margin-right: 5rem;
+
+      & img {
+        margin-bottom: 2rem;
+        width: 15vw;
+      }
+
+      & div {
+        padding-right: 10%;
+
+        & p {
+          font-family: 'Hoefler';
+          font-size: 2rem;
+          text-align: left;
+          height: 5vh;
+        }
+      }
+    }
+  }
+}
+
+.scrollbar {
+  position: absolute;
+  bottom: 10vh;
+  left: 50vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  &_track {
+    display: block;
+    position: absolute;
+
+    height: 1rem;
+    width: 30vw;
+
+    background-color: black;
+  }
+
+  &_thumb {
+    display: block;
+    position: absolute;
+    height: 2rem;
+    background-color: black;
+  }
+}
