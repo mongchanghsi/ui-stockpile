@@ -5,7 +5,8 @@ import {
   SixImageLists2,
   SixImageLists3,
 } from '../../utils/constants/data';
-import { useCallback, useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
+import { Range } from 'react-range';
 
 export const galleryFilter = [
   {
@@ -25,112 +26,28 @@ export const galleryFilter = [
 const CustomScrollBar = () => {
   const [data, setData] = useState<any[]>(SixImageLists);
   const [activeFilter, setActiveFilter] = useState<number>(1);
-  const contentRef = useRef<HTMLDivElement>(null);
-  const scrollTrackRef = useRef<HTMLDivElement>(null);
-  const scrollThumbRef = useRef<HTMLDivElement>(null);
-  const observer = useRef<ResizeObserver | null>(null);
-  const [thumbWidth, setThumbWidth] = useState(40);
 
-  const [scrollStartPosition, setScrollStartPosition] = useState<number | null>(
-    null
-  );
-  const [initialScrollLeft, setInitialScrollLeft] = useState<number>(0);
-  const [isDragging, setIsDragging] = useState(false);
+  const contentRef = useRef<HTMLDivElement | null>(null);
+  const [offsetLeft, setOffsetLeft] = useState<number[]>([0]);
+  const [childElements, setChildElements] = useState<number>(1);
+  const [max, setMax] = useState<number>(1);
 
-  const handleResize = (ref: HTMLDivElement, trackSize: number) => {
-    const { clientWidth, scrollWidth } = ref;
-    setThumbWidth(Math.max((clientWidth / scrollWidth) * trackSize, 40));
+  useEffect(() => {
+    if (!contentRef || !contentRef.current || !contentRef.current.childNodes)
+      return;
+
+    setChildElements(contentRef.current.childNodes.length);
+    setMax(contentRef.current.scrollWidth - contentRef.current.offsetWidth);
+    contentRef.current.scrollTo({ left: offsetLeft[0], behavior: 'smooth' });
+  }, [childElements, max, offsetLeft]);
+
+  const handleChange = (values: any) => {
+    setOffsetLeft(values);
   };
 
-  const handleThumbPosition = useCallback(() => {
-    if (
-      !contentRef.current ||
-      !scrollTrackRef.current ||
-      !scrollThumbRef.current
-    ) {
-      return;
-    }
-    const { scrollLeft: contentLeft, scrollWidth: contentWidth } =
-      contentRef.current;
-    const { clientWidth: trackWidth } = scrollTrackRef.current;
-    let newLeft = (+contentLeft / +contentWidth) * trackWidth;
-    newLeft = Math.min(newLeft, trackWidth - thumbWidth);
-    const thumb = scrollThumbRef.current;
-    thumb.style.left = `${newLeft}px`;
-  }, [data]);
-
-  const handleThumbMouseRight = useCallback((e) => {
-    e.preventDefault();
-    e.stopPropagation();
-    setScrollStartPosition(e.clientX);
-    if (contentRef.current) setInitialScrollLeft(contentRef.current.scrollLeft);
-    setIsDragging(true);
-  }, []);
-
-  const handleThumbMouseLeft = useCallback(
-    (e) => {
-      e.preventDefault();
-      e.stopPropagation();
-      if (isDragging) {
-        setIsDragging(false);
-      }
-    },
-    [isDragging]
-  );
-
-  const handleThumbMouseMove = useCallback(
-    (e) => {
-      e.preventDefault();
-      e.stopPropagation();
-      if (isDragging) {
-        if (!contentRef.current || !scrollStartPosition) return;
-
-        const {
-          scrollLeft: contentScrollWidth,
-          offsetWidth: contentOffsetWidth,
-        } = contentRef.current;
-
-        // Subtract the current mouse y position from where you started to get the pixel difference in mouse position. Multiply by ratio of visible content height to thumb height to scale up the difference for content scrolling.
-        const deltaX =
-          (e.clientX - scrollStartPosition) * (contentOffsetWidth / thumbWidth);
-
-        const newScrollLeft = Math.min(
-          initialScrollLeft + deltaX,
-          contentScrollWidth - contentOffsetWidth
-        );
-
-        contentRef.current.scrollLeft = newScrollLeft;
-      }
-    },
-    [isDragging, scrollStartPosition, thumbWidth]
-  );
-
-  useEffect(() => {
-    if (contentRef.current && scrollTrackRef.current) {
-      const ref = contentRef.current;
-      const { clientWidth: trackSize } = scrollTrackRef.current;
-      observer.current = new ResizeObserver(() => {
-        handleResize(ref, trackSize);
-      });
-      observer.current.observe(ref);
-      ref.addEventListener('scroll', handleThumbPosition);
-      return () => {
-        observer.current?.unobserve(ref);
-        ref.removeEventListener('scroll', handleThumbPosition);
-      };
-    }
-  }, [data]);
-
-  useEffect(() => {
-    document.addEventListener('mousemove', handleThumbMouseMove);
-    // document.addEventListener('mouseleft', handleThumbMouseLeft);
-    document.addEventListener('mouseleave', handleThumbMouseLeft);
-    return () => {
-      document.removeEventListener('mousemove', handleThumbMouseMove);
-      // document.removeEventListener('mouseleft', handleThumbMouseLeft);
-      document.removeEventListener('mouseleave', handleThumbMouseLeft);
-    };
-  }, [handleThumbMouseMove, handleThumbMouseLeft]);
+  const handleScroll = (e: any) => {
+    setOffsetLeft([e.target.scrollLeft]);
+  };
 
   useEffect(() => {
     switch (activeFilter) {
@@ -153,7 +70,10 @@ const CustomScrollBar = () => {
     <div className={styles.container}>
       <div className={styles.desc}>
         <h2>Horizontal Gallery with Custom Scroll Bar</h2>
-        <p></p>
+        <p>
+          Horizontal Gallery with a customized horizonal scroll bar separated
+          from the component as well as options to switch between data.
+        </p>
       </div>
 
       <div className={styles.main}>
@@ -185,7 +105,13 @@ const CustomScrollBar = () => {
               })}
             </ul>
           </div>
-          <div className={styles.gallery} ref={contentRef}>
+          <div
+            className={styles.gallery}
+            ref={contentRef}
+            onScroll={(e) => {
+              handleScroll(e);
+            }}
+          >
             <ul>
               {data.map((item, index: number) => {
                 return (
@@ -198,14 +124,33 @@ const CustomScrollBar = () => {
             </ul>
           </div>
           <div id='GalleryCustomScrollbar' className={styles.scrollbar}>
-            <div className={styles.scrollbar_track} ref={scrollTrackRef}></div>
-            <div
-              className={styles.scrollbar_thumb}
-              style={{
-                width: `${thumbWidth}px`,
-              }}
-              ref={scrollThumbRef}
-            ></div>
+            <Range
+              step={1}
+              min={0}
+              max={max}
+              values={offsetLeft}
+              onChange={(values) => handleChange(values)}
+              renderTrack={({ props, children }) => (
+                <div
+                  {...props}
+                  style={{
+                    ...props.style,
+                  }}
+                  className={styles.scrollbar_track}
+                >
+                  {children}
+                </div>
+              )}
+              renderThumb={({ props }) => (
+                <div
+                  {...props}
+                  style={{
+                    ...props.style,
+                  }}
+                  className={styles.scrollbar_thumb}
+                />
+              )}
+            />
           </div>
         </div>
       </div>
