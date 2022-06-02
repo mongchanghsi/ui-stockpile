@@ -1,6 +1,8 @@
 import styles from './index.module.scss';
 import { IFiveItemList } from '../../utils/constants/data';
 import AccordionItem from './AccordionItem';
+import { getIconSvgMobile } from '../../utils';
+import { SocialEnums } from '../../utils/constants/enums';
 
 const Accordion = ({ data }: { data: IFiveItemList[] }) => {
   return (
@@ -19,6 +21,16 @@ const Accordion = ({ data }: { data: IFiveItemList[] }) => {
           </div>
         ))}
       </ul>
+      <div className={styles.action}>
+        <a
+          className={styles.link}
+          href='https://github.com/mongchanghsi/ui-stockpile/tree/master/components/Accordion'
+          target='_blank'
+          rel='noreferrer'
+        >
+          {getIconSvgMobile(SocialEnums.GITHUB)}
+        </a>
+      </div>
     </div>
   );
 };

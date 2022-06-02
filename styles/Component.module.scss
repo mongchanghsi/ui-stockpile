@@ -4,9 +4,11 @@
 .container {
   position: relative;
   width: 100vw;
-  // height: 100vh;
+  min-height: 20vh;
   padding-left: 10vw;
   padding-right: 10vw;
+  margin-top: 5vh;
+  margin-bottom: 5vh;
 }
 
 .main {
@@ -14,7 +16,6 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100%;
 }
 
 .title {
@@ -30,25 +31,7 @@
   margin-bottom: 2rem;
 }
 
-.link {
-  color: black;
-  text-align: center;
-
-  text-decoration: none;
-
-  &:hover {
-    & svg {
-      & path {
-        transition: all 0.5s ease;
-        fill: grey;
-      }
-    }
-  }
-
-  & svg {
-    & path {
-      transition: all 0.5s ease;
-      fill: black;
-    }
-  }
+.actionBar {
+  width: 100%;
+  padding: 2rem;
 }
