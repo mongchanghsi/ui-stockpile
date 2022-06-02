@@ -1,4 +1,6 @@
 import styles from '../styles/About.module.scss';
+import { getIconSvg, getIconSvgMobile } from '../utils';
+import { SocialEnums } from '../utils/constants/enums';
 
 const About = () => {
   return (
@@ -8,12 +10,10 @@ const About = () => {
           UI-Stockpile
         </h2>
         <p className={styles.text}>
-          This repository and website serves as a platform for my friends and I
-          to add in any interesting custom-built UI to be documented here. This
-          will allow us to simply refer to here instead of recalling what was
-          the name of the component or which repository did the component
-          resides in. Please feel free to do a PR and contribute to this
-          repository!
+          Open-sourced platform where developers can contribute any interesting
+          interfaces they come across and want to challenge themselves in
+          recreating them. Feel free to contribute through pull request and
+          remember to credit the design to the websites where you see them!
         </p>
         <a
           href='https://github.com/mongchanghsi/ui-stockpile'
@@ -21,7 +21,7 @@ const About = () => {
           rel='noreferrer'
           className={styles.link}
         >
-          https://github.com/mongchanghsi/ui-stockpile
+          {getIconSvg(SocialEnums.GITHUB)}
         </a>
       </div>
     </div>
