@@ -2,7 +2,7 @@ import styles from './index.module.scss';
 import { FiveItemLists } from '../../utils/constants/data';
 import GridItem from './GridItem';
 import { SocialEnums } from '../../utils/constants/enums';
-import { getIconSvgMobile } from '../../utils';
+import Icon from '../../utils/components/Icon';
 
 const AzukiGridDisplay = () => {
   return (
@@ -31,17 +31,7 @@ const AzukiGridDisplay = () => {
           ))}
         </div>
       </div>
-
-      <div className={styles.action}>
-        <a
-          className={styles.link}
-          href='https://github.com/mongchanghsi/ui-stockpile/tree/master/components/AzukiGridDisplay'
-          target='_blank'
-          rel='noreferrer'
-        >
-          {getIconSvgMobile(SocialEnums.GITHUB)}
-        </a>
-      </div>
+      <Icon url='AzukiGridDisplay' platform={SocialEnums.GITHUB}/>
     </div>
   );
 };

@@ -2,8 +2,8 @@ import { useState, useEffect } from 'react';
 import styles from './index.module.scss';
 import AccordionItem from './AccordionItem';
 import { IFiveItemList } from '../../utils/constants/data';
-import { getIconSvgMobile } from '../../utils';
 import { SocialEnums } from '../../utils/constants/enums';
+import Icon from '../../utils/components/Icon';
 
 const AccordionVersion2 = ({ data }: { data: IFiveItemList[] }) => {
   const [currentData, setCurrentData] = useState<any[]>([]);
@@ -58,16 +58,7 @@ const AccordionVersion2 = ({ data }: { data: IFiveItemList[] }) => {
           );
         })}
       </ul>
-      <div className={styles.action}>
-        <a
-          className={styles.link}
-          href='https://github.com/mongchanghsi/ui-stockpile/tree/master/components/AccordionVer2'
-          target='_blank'
-          rel='noreferrer'
-        >
-          {getIconSvgMobile(SocialEnums.GITHUB)}
-        </a>
-      </div>
+      <Icon url='AccordionVer2' platform={SocialEnums.GITHUB}/>
     </div>
   );
 };

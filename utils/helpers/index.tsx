@@ -1,4 +1,4 @@
-import { SocialEnums } from './constants/enums';
+import { SocialEnums } from '../constants/enums';
 
 export const getIconSvg = (type: SocialEnums) => {
   let renderImage;
