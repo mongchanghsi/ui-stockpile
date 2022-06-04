@@ -1,6 +1,6 @@
 import { FC } from 'react';
-import { SocialEnums, SocialInfo } from '../../constants/enums';
-import { getIconSvgMobile } from '../../helpers';
+import { SocialEnums, SocialInfo } from '../../utils/constants/enums';
+import { getIconSvgMobile } from '../../utils/helpers';
 import styles from './index.module.scss';
 
 interface IconProps {

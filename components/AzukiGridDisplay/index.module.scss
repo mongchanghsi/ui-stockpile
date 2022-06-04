@@ -17,28 +17,6 @@
   padding-right: 10vw;
 }
 
-.desc {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  color: black;
-  margin-bottom: 2rem;
-
-  & h2 {
-    font-size: 3rem;
-    color: black;
-
-    @include l {
-      font-size: 4rem;
-    }
-  }
-  & p {
-    font-size: 2rem;
-    color: black;
-  }
-}
-
 .main {
   position: relative;
 
@@ -82,37 +60,6 @@
       grid-column-start: 4;
       grid-row-start: 1;
       grid-row-end: 3;
-    }
-  }
-}
-
-.action {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: flex-end;
-  width: 100%;
-}
-
-.link {
-  color: black;
-  text-align: center;
-
-  text-decoration: none;
-
-  &:hover {
-    & svg {
-      & path {
-        transition: all 0.5s ease;
-        fill: grey;
-      }
-    }
-  }
-
-  & svg {
-    & path {
-      transition: all 0.5s ease;
-      fill: black;
     }
   }
 }

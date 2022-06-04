@@ -9,23 +9,34 @@ export const ComponentNames = {
   [ComponentTypeNames.ACCORDTIONV1]: {
     label: 'Accordion V1',
     href: ComponentTypeNames.ACCORDTIONV1,
-    title: '',
-    desc: '',
-    url: '',
+    title: 'Accordion List',
+    desc: `Accordion Items where you can have multiple items to be opened at one
+    time`,
+    url: 'Accordion',
   },
   [ComponentTypeNames.ACCORDTIONV2]: {
     label: 'Accordion V2',
     href: ComponentTypeNames.ACCORDTIONV2,
-    title: '',
-    desc: '',
-    url: '',
+    title: 'Accordion List Version 2',
+    desc: `Accordion Items where you can only strictly have one item opened at
+    any point in time`,
+    url: 'AccordionVer2',
   },
   [ComponentTypeNames.AZUKIGRID]: {
     label: 'Azuki Grid Display',
     href: ComponentTypeNames.AZUKIGRID,
-    title: '',
-    desc: '',
-    url: '',
+    title: 'Azuki Grid Display - Not Clickable',
+    desc: `Azuki Grid Display is inspired from https://www.azuki.com/mindmap and
+    strictly note that it is limited to only 5 items. If you want to fit
+    more items, you should manually adjust the grid to your requirements.`,
+    url: 'AzukiGridDisplay',
+  },
+  [ComponentTypeNames.ERROR404]: {
+    label: 'Error 404',
+    href: ComponentTypeNames.ERROR404,
+    title: 'Error 404',
+    desc: `Error 404 is a page for losted souls`,
+    url: 'Error404',
   },
 };
 
