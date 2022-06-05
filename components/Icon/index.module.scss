@@ -1,0 +1,29 @@
+.action {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  width: 100%;
+}
+.link {
+  color: black;
+  text-align: center;
+
+  text-decoration: none;
+
+  &:hover {
+    & svg {
+      & path {
+        transition: all 0.5s ease;
+        fill: grey;
+      }
+    }
+  }
+
+  & svg {
+    & path {
+      transition: all 0.5s ease;
+      fill: black;
+    }
+  }
+}

@@ -13,24 +13,39 @@ import { FiveItemLists } from '../../utils/constants/data';
 import Error404Component from '../../components/Error404';
 
 import {
-  ComponentTypeNames,
   ComponentNames,
+  ComponentTypeNames,
+  SocialEnums,
 } from '../../utils/constants/enums';
 import Meta from '../../components/Meta';
+import Description from '../../components/Description';
+import Icon from '../../components/Icon';
 
 const renderComponent = (_componentName: ComponentTypeNames) => {
-  switch (_componentName) {
-    case ComponentTypeNames.ERROR404:
-      return <Error404Component />;
-    case ComponentTypeNames.ACCORDTIONV1:
-      return <Accordion data={FiveItemLists} />;
-    case ComponentTypeNames.ACCORDTIONV2:
-      return <AccordionVersion2 data={FiveItemLists} />;
-    case ComponentTypeNames.AZUKIGRID:
-      return <AzukiGridDisplay />;
-    default:
-      return <Error404Component />;
-  }
+  return (
+    <div className={styles.container}>
+      <Description 
+        heading={ComponentNames[_componentName].title} 
+        description={ComponentNames[_componentName].desc}
+      />
+      {(() => {
+        switch (_componentName) {
+          case ComponentTypeNames.ERROR404:
+            return <Error404Component />;
+          case ComponentTypeNames.ACCORDTIONV1:
+            return <Accordion data={FiveItemLists} />;
+          case ComponentTypeNames.ACCORDTIONV2:
+            return <AccordionVersion2 data={FiveItemLists} />;
+          case ComponentTypeNames.AZUKIGRID:
+            return <AzukiGridDisplay />;
+          default:
+            return <Error404Component />;
+        }
+      })()}
+      <Icon url={ComponentNames[_componentName].url} platform={SocialEnums.GITHUB}/>
+    </div>
+  )
+  
 };
 
 const RenderBrand = forwardRef(

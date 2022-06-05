@@ -1,5 +1,5 @@
 import styles from '../styles/About.module.scss';
-import { getIconSvg, getIconSvgMobile } from '../utils';
+import { getIconSvg, getIconSvgMobile } from '../utils/helpers';
 import { SocialEnums } from '../utils/constants/enums';
 
 const About = () => {
