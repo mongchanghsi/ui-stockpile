@@ -3,6 +3,7 @@ export enum ComponentTypeNames {
   ACCORDTIONV1 = 'accordionv1',
   ACCORDTIONV2 = 'accordionv2',
   AZUKIGRID = 'azukigrid',
+  BOOKANIMATION = 'bookanimation',
 }
 
 export const ComponentNames = {
@@ -38,6 +39,13 @@ export const ComponentNames = {
     desc: `Error 404 is a page for losted souls`,
     url: 'Error404',
   },
+  [ComponentTypeNames.BOOKANIMATION]: {
+    label: 'Book Animation',
+    href: ComponentTypeNames.BOOKANIMATION,
+    title: 'Book Animation',
+    desc: `To imitate an interaction of book flipping via video`,
+    url: 'BookAnimation',
+  },
 };
 
 export enum SocialEnums {
@@ -53,35 +61,35 @@ export enum SocialEnums {
 
 export const SocialInfo = {
   [SocialEnums.TWITTER]: {
-    'label': SocialEnums.TWITTER,
-    'href': 'placeholder for future use'
+    label: SocialEnums.TWITTER,
+    href: 'placeholder for future use',
   },
   [SocialEnums.DISCORD]: {
-    'label': SocialEnums.DISCORD,
-    'href': 'placeholder for future use'
+    label: SocialEnums.DISCORD,
+    href: 'placeholder for future use',
   },
   [SocialEnums.OPENSEA]: {
-    'label': SocialEnums.OPENSEA,
-    'href': 'placeholder for future use'
+    label: SocialEnums.OPENSEA,
+    href: 'placeholder for future use',
   },
   [SocialEnums.LINKEDIN]: {
-    'label': SocialEnums.LINKEDIN,
-    'href': 'placeholder for future use'
+    label: SocialEnums.LINKEDIN,
+    href: 'placeholder for future use',
   },
   [SocialEnums.WEBSITE]: {
-    'label': SocialEnums.WEBSITE,
-    'href': 'placeholder for future use'
+    label: SocialEnums.WEBSITE,
+    href: 'placeholder for future use',
   },
   [SocialEnums.INSTAGRAM]: {
-    'label': SocialEnums.INSTAGRAM,
-    'href': 'placeholder for future use'
+    label: SocialEnums.INSTAGRAM,
+    href: 'placeholder for future use',
   },
   [SocialEnums.YOUTUBE]: {
-    'label': SocialEnums.YOUTUBE,
-    'href': 'placeholder for future use'
+    label: SocialEnums.YOUTUBE,
+    href: 'placeholder for future use',
   },
   [SocialEnums.GITHUB]: {
-    'label': SocialEnums.GITHUB,
-    'href': `https://github.com/mongchanghsi/ui-stockpile/tree/master/components`
-  }
-}
+    label: SocialEnums.GITHUB,
+    href: `https://github.com/mongchanghsi/ui-stockpile/tree/master/components`,
+  },
+};

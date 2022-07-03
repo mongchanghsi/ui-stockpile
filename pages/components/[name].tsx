@@ -11,6 +11,7 @@ import AccordionVersion2 from '../../components/AccordionVer2';
 
 import { FiveItemLists } from '../../utils/constants/data';
 import Error404Component from '../../components/Error404';
+import BookAnimation from '../../components/BookAnimation';
 
 import {
   ComponentNames,
@@ -24,8 +25,8 @@ import Icon from '../../components/Icon';
 const renderComponent = (_componentName: ComponentTypeNames) => {
   return (
     <div className={styles.container}>
-      <Description 
-        heading={ComponentNames[_componentName].title} 
+      <Description
+        heading={ComponentNames[_componentName].title}
         description={ComponentNames[_componentName].desc}
       />
       {(() => {
@@ -38,14 +39,18 @@ const renderComponent = (_componentName: ComponentTypeNames) => {
             return <AccordionVersion2 data={FiveItemLists} />;
           case ComponentTypeNames.AZUKIGRID:
             return <AzukiGridDisplay />;
+          case ComponentTypeNames.BOOKANIMATION:
+            return <BookAnimation />;
           default:
             return <Error404Component />;
         }
       })()}
-      <Icon url={ComponentNames[_componentName].url} platform={SocialEnums.GITHUB}/>
+      <Icon
+        url={ComponentNames[_componentName].url}
+        platform={SocialEnums.GITHUB}
+      />
     </div>
-  )
-  
+  );
 };
 
 const RenderBrand = forwardRef(
