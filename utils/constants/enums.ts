@@ -4,6 +4,7 @@ export enum ComponentTypeNames {
   ACCORDTIONV2 = 'accordionv2',
   AZUKIGRID = 'azukigrid',
   BOOKANIMATION = 'bookanimation',
+  STORYBOOK = 'storybook'
 }
 
 export const ComponentNames = {
@@ -45,6 +46,13 @@ export const ComponentNames = {
     title: 'Book Animation',
     desc: `To imitate an interaction of book flipping via video`,
     url: 'BookAnimation',
+  },
+  [ComponentTypeNames.STORYBOOK]: {
+    label: 'Storybook Video',
+    href: ComponentTypeNames.STORYBOOK,
+    title: 'Storybook Video',
+    desc: `Storybook Video allows u to jump to specific timestamps`,
+    url: 'Storybook',
   },
 };
 

@@ -21,6 +21,7 @@ import {
 import Meta from '../../components/Meta';
 import Description from '../../components/Description';
 import Icon from '../../components/Icon';
+import StorybookVideo from '../../components/StorybookVideo';
 
 const renderComponent = (_componentName: ComponentTypeNames) => {
   return (
@@ -41,6 +42,8 @@ const renderComponent = (_componentName: ComponentTypeNames) => {
             return <AzukiGridDisplay />;
           case ComponentTypeNames.BOOKANIMATION:
             return <BookAnimation />;
+          case ComponentTypeNames.STORYBOOK:
+            return <StorybookVideo />
           default:
             return <Error404Component />;
         }
