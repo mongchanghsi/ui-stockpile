@@ -18,41 +18,74 @@ const determineStage = (timestamp: number) => {
   }
 };
 
+const determineDuration = (stage: number) => {
+  switch (stage) {
+    case 0:
+      return 7000;
+    case 1:
+      return 7000;
+    case 2:
+      return 7000;
+    case 3:
+      return 7000;
+    default:
+      return 0;
+  }
+};
+
 const BookAnimation = () => {
   const [isPlaying, setIsPlaying] = useState(false);
   const playerRef = useRef<any>(null);
-  let stage = 0;
+  const [stage, setStage] = useState<number>(0);
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      const currentTimestamp = playerRef.current.getCurrentTime();
-      const currentStage = determineStage(currentTimestamp);
-      if (currentStage !== stage) {
-        stage = currentStage;
-        setIsPlaying(false);
-      }
-    }, 500);
+  // useEffect(() => {
+  //   const interval = setInterval(() => {
+  //     const currentTimestamp = playerRef.current.getCurrentTime();
+  //     const currentStage = determineStage(currentTimestamp);
+  //     if (currentStage !== stage) {
+  //       stage = currentStage;
+  //       setIsPlaying(false);
+  //     }
+  //   }, 500);
+  //   return () => clearInterval(interval);
+  // }, []);
 
-    return () => clearInterval(interval);
-  }, []);
+  // const handleStage = () => {
+  //   if (stage === 3) return;
+  //   setIsPlaying(true);
+  // };
 
   const handleStage = () => {
     if (stage === 3) return;
     setIsPlaying(true);
+    const duration = determineDuration(stage);
+    setTimeout(() => {
+      setStage((prevState) => prevState + 1);
+      setIsPlaying(false);
+    }, duration);
   };
 
   return (
     <div className={styles.main}>
-      <ReactPlayer
-        playing={isPlaying}
-        ref={playerRef}
-        url='/assets/book_animation.mp4'
-        controls={false}
-        onEnded={() => (stage = 0)}
-      />
-      <button type='button' onClick={() => handleStage()}>
-        next stage
-      </button>
+      <div className={styles.video}>
+        <ReactPlayer
+          playing={isPlaying}
+          ref={playerRef}
+          url='/assets/book_animation.mp4'
+          controls={false}
+          width={'100%'}
+          height={'100%'}
+        />
+
+        <button
+          style={{ display: isPlaying ? 'none' : 'block' }}
+          className={styles.button}
+          type='button'
+          onClick={() => handleStage()}
+        >
+          next stage
+        </button>
+      </div>
     </div>
   );
 };

@@ -12,3 +12,24 @@
   align-items: center;
   justify-content: center;
 }
+
+.video {
+  position: relative;
+  width: 100rem;
+  height: auto;
+}
+
+.button {
+  position: absolute;
+  z-index: 2;
+
+  bottom: 10rem;
+  right: 30rem;
+
+  border: none;
+  margin: 0;
+  padding: 0;
+  background-color: red;
+  padding: 2rem;
+  border-radius: 50%;
+}
