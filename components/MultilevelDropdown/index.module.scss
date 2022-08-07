@@ -1,0 +1,48 @@
+@import '../../styles/variables.module.scss';
+@import '../../styles/mixin.module.scss';
+
+.main {
+  position: relative;
+
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.item {
+  background-color: #ebe7e0;
+  margin: 0.5rem;
+  width: 80vw;
+  list-style: none;
+
+  @include m {
+    width: 70vw;
+    margin: 1rem;
+  }
+
+  @include l {
+    width: 50vw;
+  }
+}
+
+.name {
+  padding: 1rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+
+  cursor: pointer;
+
+  @include m {
+    padding: 2rem;
+    padding-left: 4rem;
+    padding-right: 4rem;
+    font-size: 2.5rem;
+  }
+
+}

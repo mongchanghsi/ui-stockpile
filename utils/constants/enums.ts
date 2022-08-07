@@ -3,6 +3,7 @@ export enum ComponentTypeNames {
   ACCORDTIONV1 = 'accordionv1',
   ACCORDTIONV2 = 'accordionv2',
   AZUKIGRID = 'azukigrid',
+  MULTILEVELDROPDOWN = 'multilevel-dropdown'
 }
 
 export const ComponentNames = {
@@ -30,6 +31,13 @@ export const ComponentNames = {
     strictly note that it is limited to only 5 items. If you want to fit
     more items, you should manually adjust the grid to your requirements.`,
     url: 'AzukiGridDisplay',
+  },
+  [ComponentTypeNames.MULTILEVELDROPDOWN]: {
+    label: 'Multilevel Dropdown',
+    href: ComponentTypeNames.MULTILEVELDROPDOWN,
+    title: 'Multilevel Dropdown',
+    desc: `Multilevel Dropdown Menu that allows user to navigate through items in each level of menu`,
+    url: 'Multilevel-Dropdown',
   },
   [ComponentTypeNames.ERROR404]: {
     label: 'Error 404',
