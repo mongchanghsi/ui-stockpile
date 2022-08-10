@@ -9,7 +9,7 @@ import AzukiGridDisplay from '../../components/AzukiGridDisplay';
 import Accordion from '../../components/Accordion';
 import AccordionVersion2 from '../../components/AccordionVer2';
 
-import { FiveItemLists } from '../../utils/constants/data';
+import { FiveItemLists, MultilevelOptions } from '../../utils/constants/data';
 import Error404Component from '../../components/Error404';
 
 import {
@@ -20,6 +20,7 @@ import {
 import Meta from '../../components/Meta';
 import Description from '../../components/Description';
 import Icon from '../../components/Icon';
+import MultilevelDropdown from '../../components/MultilevelDropdown';
 
 const renderComponent = (_componentName: ComponentTypeNames) => {
   return (
@@ -38,6 +39,8 @@ const renderComponent = (_componentName: ComponentTypeNames) => {
             return <AccordionVersion2 data={FiveItemLists} />;
           case ComponentTypeNames.AZUKIGRID:
             return <AzukiGridDisplay />;
+          case ComponentTypeNames.MULTILEVELDROPDOWN:
+            return <MultilevelDropdown data={MultilevelOptions}/>
           default:
             return <Error404Component />;
         }

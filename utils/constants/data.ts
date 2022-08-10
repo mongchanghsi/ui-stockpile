@@ -99,7 +99,7 @@ export const SixImageLists2: ISixImageList[] = [
     title: 'Title 2',
     content: 'Content 2',
   },
-];
+]
 
 export const SixImageLists3: ISixImageList[] = [
   {
@@ -112,4 +112,128 @@ export const SixImageLists3: ISixImageList[] = [
     title: 'Title 5',
     content: 'Content 5',
   },
-];
+]
+
+
+export interface IMultiLevelOption {
+  name: string;
+  value: string;
+  children?: {
+    data: IMultiLevelOption[];
+  };
+}
+
+export const MultilevelOptions: IMultiLevelOption[]= [
+  {
+    name: 'Static typed language',
+    value: 'static-typed-language',
+    children: {
+      data: [
+        {
+          name: 'C++',
+          value: 'cpp',
+        },
+        {
+          name: 'C#',
+          value: 'csharp',
+          children: {
+            data: [
+              {
+                name: '.NET',
+                value: 'dotnet',
+              },
+            ],
+          },
+        },
+        {
+          name: 'Java',
+          value: 'java',
+          children: {
+            data: [
+              {
+                name: 'Spring Framework',
+                value: 'spring-framework',
+              },
+            ],
+          },
+        },
+        {
+          name: 'Golang',
+          value: 'golang',
+          children: {
+            data: [
+              {
+                name: 'Gin',
+                value: 'gin',
+              },
+            ],
+          },
+        },
+        {
+          name: 'Kotlin',
+          value: 'kotlin',
+        },
+      ],
+    },
+  },
+  {
+    name: 'Dynamically typed language',
+    value: 'dynamically-typed-language',
+    children: {
+      data: [
+        {
+          name: 'JavaScript',
+          value: 'javascript',
+          children: {
+            data: [
+              {
+                name: 'React',
+                value: 'react',
+                children: {
+                  data: [
+                    {
+                      name: 'NextJs',
+                      value: 'nextjs',
+                    },
+                  ],
+                },
+              },
+            ],
+          },
+        },
+        {
+          name: 'Python',
+          value: 'python',
+          children: {
+            data: [
+              {
+                name: 'FastAPI',
+                value: 'fast-api',
+              },
+              {
+                name: 'Flask',
+                value: 'flask',
+              },
+              {
+                name: 'Django',
+                value: 'django',
+              },
+            ],
+          },
+        },
+        {
+          name: 'PHP',
+          value: 'php',
+          children: {
+            data: [
+              {
+                name: 'Laravel',
+                value: 'laravel',
+              },
+            ],
+          },
+        },
+      ],
+    },
+  },
+]
