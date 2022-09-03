@@ -1,0 +1,41 @@
+@import "../../styles/variables.module.scss";
+@import "../../styles/mixin.module.scss";
+
+.container {
+  position: relative;
+  width: 100vw;
+  background-color: white;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  padding-top: 3vh;
+  padding-bottom: 3vh;
+
+  padding-left: 10vw;
+  padding-right: 10vw;
+}
+
+.main {
+  position: relative;
+
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  & p {
+    font-size: 1.8rem;
+    color: black;
+    text-align: left;
+
+    &::selection {
+      background-color: var(--random-color);
+      color: white;
+    }
+  }
+}
