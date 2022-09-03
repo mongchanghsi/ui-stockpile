@@ -23,6 +23,7 @@ import Icon from "../../components/Icon";
 import MultilevelDropdown from "../../components/MultilevelDropdown";
 import RandomColorTextSelection from "../../components/RandomColorTextSelection";
 import ProxmityHover from "../../components/ProximityHover";
+import ProgressBar from "../../components/ProgressBar";
 
 const renderComponent = (_componentName: ComponentTypeNames) => {
   return (
@@ -45,6 +46,8 @@ const renderComponent = (_componentName: ComponentTypeNames) => {
             return <MultilevelDropdown data={MultilevelOptions} />;
           case ComponentTypeNames.RANDOMCOLORTEXTSELECTION:
             return <RandomColorTextSelection />;
+          case ComponentTypeNames.PROGRESSBAR:
+            return <ProgressBar currentValue={50} maxValue={120} />;
           case ComponentTypeNames.PROXIMITY:
             return <ProxmityHover />;
           default:
