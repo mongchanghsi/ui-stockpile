@@ -1,21 +1,13 @@
 import { useState } from "react";
 import styles from "./index.module.scss";
-
-const colorPalette = [
-  "#5F5AFA", // purple
-  "#1b1b1b", // black
-  "#FF4483", // red
-  "#676CFF", // blue
-  "#FF7522", // orange
-  "#FFBB08", // mustard
-];
+import { ColorPalette } from "../../utils/constants/data";
 
 const RandomColorTextSelection = () => {
-  const [randomBgColor, setRandomBgColor] = useState<string>(colorPalette[0]);
+  const [randomBgColor, setRandomBgColor] = useState<string>(ColorPalette[0]);
 
   const handleRandomBgColor = () => {
     setRandomBgColor(
-      colorPalette[Math.floor(Math.random() * colorPalette.length)]
+      ColorPalette[Math.floor(Math.random() * ColorPalette.length)]
     );
   };
   return (
