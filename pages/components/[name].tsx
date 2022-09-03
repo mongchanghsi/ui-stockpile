@@ -1,32 +1,33 @@
 /* eslint-disable react/display-name */
-import { useRouter } from 'next/router';
-import Link from 'next/link';
-import { useEffect, useState, forwardRef } from 'react';
-import styles from '../../styles/Component.module.scss';
-import { IoMdArrowBack } from 'react-icons/io';
+import { useRouter } from "next/router";
+import Link from "next/link";
+import { useEffect, useState, forwardRef } from "react";
+import styles from "../../styles/Component.module.scss";
+import { IoMdArrowBack } from "react-icons/io";
 
-import AzukiGridDisplay from '../../components/AzukiGridDisplay';
-import Accordion from '../../components/Accordion';
-import AccordionVersion2 from '../../components/AccordionVer2';
+import AzukiGridDisplay from "../../components/AzukiGridDisplay";
+import Accordion from "../../components/Accordion";
+import AccordionVersion2 from "../../components/AccordionVer2";
 
-import { FiveItemLists, MultilevelOptions } from '../../utils/constants/data';
-import Error404Component from '../../components/Error404';
+import { FiveItemLists, MultilevelOptions } from "../../utils/constants/data";
+import Error404Component from "../../components/Error404";
 
 import {
   ComponentNames,
   ComponentTypeNames,
   SocialEnums,
-} from '../../utils/constants/enums';
-import Meta from '../../components/Meta';
-import Description from '../../components/Description';
-import Icon from '../../components/Icon';
-import MultilevelDropdown from '../../components/MultilevelDropdown';
+} from "../../utils/constants/enums";
+import Meta from "../../components/Meta";
+import Description from "../../components/Description";
+import Icon from "../../components/Icon";
+import MultilevelDropdown from "../../components/MultilevelDropdown";
+import RandomColorTextSelection from "../../components/RandomColorTextSelection";
 
 const renderComponent = (_componentName: ComponentTypeNames) => {
   return (
     <div className={styles.container}>
-      <Description 
-        heading={ComponentNames[_componentName].title} 
+      <Description
+        heading={ComponentNames[_componentName].title}
         description={ComponentNames[_componentName].desc}
       />
       {(() => {
@@ -40,15 +41,19 @@ const renderComponent = (_componentName: ComponentTypeNames) => {
           case ComponentTypeNames.AZUKIGRID:
             return <AzukiGridDisplay />;
           case ComponentTypeNames.MULTILEVELDROPDOWN:
-            return <MultilevelDropdown data={MultilevelOptions}/>
+            return <MultilevelDropdown data={MultilevelOptions} />;
+          case ComponentTypeNames.RANDOMCOLORTEXTSELECTION:
+            return <RandomColorTextSelection />;
           default:
             return <Error404Component />;
         }
       })()}
-      <Icon url={ComponentNames[_componentName].url} platform={SocialEnums.GITHUB}/>
+      <Icon
+        url={ComponentNames[_componentName].url}
+        platform={SocialEnums.GITHUB}
+      />
     </div>
-  )
-  
+  );
 };
 
 const RenderBrand = forwardRef(
@@ -64,8 +69,8 @@ const RenderBrand = forwardRef(
         href={href}
         onClick={onClick}
         size={50}
-        color='black'
-        style={{ cursor: 'pointer' }}
+        color="black"
+        style={{ cursor: "pointer" }}
       />
     );
   }
@@ -90,7 +95,7 @@ const Component = () => {
     <div>
       <Meta title={`UI Stockpile | ${componentName}`} />
       <div className={styles.actionBar}>
-        <Link href='/' passHref>
+        <Link href="/" passHref>
           <RenderBrand onClick={undefined} href={undefined} />
         </Link>
       </div>
