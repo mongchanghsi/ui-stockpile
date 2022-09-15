@@ -5,6 +5,7 @@ export enum ComponentTypeNames {
   AZUKIGRID = "azukigrid",
   MULTILEVELDROPDOWN = "multilevel-dropdown",
   RANDOMCOLORTEXTSELECTION = "random-color-text-selection",
+  PROGRESSBAR = "progress-bar",
 }
 
 export const ComponentNames = {
@@ -46,6 +47,13 @@ export const ComponentNames = {
     title: "Random Color Text Selection",
     desc: `A random background highlight color will be used when you highlight a text`,
     url: "Random-Color-Text-Selection",
+  },
+  [ComponentTypeNames.PROGRESSBAR]: {
+    label: "Progress Bar",
+    href: ComponentTypeNames.PROGRESSBAR,
+    title: "Progress Bar",
+    desc: `Progress bar which includes animation on load`,
+    url: "Progress-Bar",
   },
   [ComponentTypeNames.ERROR404]: {
     label: "Error 404",
