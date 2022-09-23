@@ -1,0 +1,2 @@
+// LOADER
+export const SET_LOADER_CONTEXT = "SET_LOADER_CONTEXT";
