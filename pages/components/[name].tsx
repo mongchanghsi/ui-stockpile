@@ -22,6 +22,7 @@ import Description from "../../components/Description";
 import Icon from "../../components/Icon";
 import MultilevelDropdown from "../../components/MultilevelDropdown";
 import RandomColorTextSelection from "../../components/RandomColorTextSelection";
+import ProxmityHover from "../../components/ProximityHover";
 
 const renderComponent = (_componentName: ComponentTypeNames) => {
   return (
@@ -44,6 +45,8 @@ const renderComponent = (_componentName: ComponentTypeNames) => {
             return <MultilevelDropdown data={MultilevelOptions} />;
           case ComponentTypeNames.RANDOMCOLORTEXTSELECTION:
             return <RandomColorTextSelection />;
+          case ComponentTypeNames.PROXIMITY:
+            return <ProxmityHover />;
           default:
             return <Error404Component />;
         }

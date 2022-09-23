@@ -1,0 +1,16 @@
+@import "../../../styles/variables.module.scss";
+@import "../../../styles/mixin.module.scss";
+
+.container {
+  position: relative;
+  width: 100%;
+  background-color: white;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+  height: 50vh;
+  max-height: 12rem;
+}
