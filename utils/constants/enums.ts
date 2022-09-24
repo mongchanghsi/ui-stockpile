@@ -5,7 +5,6 @@ export enum ComponentTypeNames {
   AZUKIGRID = "azukigrid",
   MULTILEVELDROPDOWN = "multilevel-dropdown",
   RANDOMCOLORTEXTSELECTION = "random-color-text-selection",
-  PROXIMITY = "proximity",
   PROGRESSBAR = "progress-bar",
   PROXIMITY = "proximity",
 }
@@ -63,13 +62,6 @@ export const ComponentNames = {
     title: "Progress Bar",
     desc: `Progress bar which includes animation on load`,
     url: "Progress-Bar",
-  },
-  [ComponentTypeNames.PROXIMITY]: {
-    label: "Proximity Hover Animation",
-    href: ComponentTypeNames.PROXIMITY,
-    title: "Proximity Hover Animation",
-    desc: `Animation of images based on the proximity of the cursor from the images. This is inspired from a Youtube tutorial by Fireship - How to make Eyeballs follow you around and https://pocketbase.io/`,
-    url: "Proximity-Hover",
   },
   [ComponentTypeNames.ERROR404]: {
     label: "Error 404",

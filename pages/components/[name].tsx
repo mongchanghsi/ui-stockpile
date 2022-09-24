@@ -50,8 +50,6 @@ const renderComponent = (_componentName: ComponentTypeNames) => {
             return <ProxmityHover />;
           case ComponentTypeNames.PROGRESSBAR:
             return <ProgressBar currentValue={50} maxValue={120} />;
-          case ComponentTypeNames.PROXIMITY:
-            return <ProxmityHover />;
           default:
             return <Error404Component />;
         }
