@@ -6,6 +6,7 @@ export enum ComponentTypeNames {
   MULTILEVELDROPDOWN = "multilevel-dropdown",
   RANDOMCOLORTEXTSELECTION = "random-color-text-selection",
   PROGRESSBAR = "progress-bar",
+  PROXIMITY = "proximity",
 }
 
 export const ComponentNames = {
@@ -47,6 +48,13 @@ export const ComponentNames = {
     title: "Random Color Text Selection",
     desc: `A random background highlight color will be used when you highlight a text`,
     url: "Random-Color-Text-Selection",
+  },
+  [ComponentTypeNames.PROXIMITY]: {
+    label: "Proximity Hover Animation",
+    href: ComponentTypeNames.PROXIMITY,
+    title: "Proximity Hover Animation",
+    desc: `Animation of images based on the proximity of the cursor from the images. This is inspired from a Youtube tutorial by Fireship - How to make Eyeballs follow you around and https://pocketbase.io/`,
+    url: "Proximity-Hover",
   },
   [ComponentTypeNames.PROGRESSBAR]: {
     label: "Progress Bar",
