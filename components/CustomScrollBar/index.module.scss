@@ -1,5 +1,5 @@
-@import '../../styles/variables.module.scss';
-@import '../../styles/mixin.module.scss';
+@import "../../styles/variables.module.scss";
+@import "../../styles/mixin.module.scss";
 
 .container {
   position: relative;
@@ -128,7 +128,7 @@
         padding-right: 10%;
 
         & p {
-          font-family: 'Hoefler';
+          font-family: $fontRegular;
           font-size: 2rem;
           text-align: left;
           height: 5vh;
