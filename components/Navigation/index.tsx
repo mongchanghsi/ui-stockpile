@@ -1,3 +1,4 @@
+/* eslint-disable react/display-name */
 import { FC, forwardRef, useContext } from "react";
 import styles from "./index.module.scss";
 import { IoMdArrowBack } from "react-icons/io";
