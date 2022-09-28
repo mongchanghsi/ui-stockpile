@@ -3,6 +3,10 @@ $font-black: black;
 $font-white: white;
 $dim-grey: #797369;
 $purple: #5f5afa;
+$backgroundColor: var(--background-color);
+$headerOneFontColor: var(--headerOne-font-color);
+$headerTwoFontColor: var(--headerTwo-font-color);
+$paragraphFontColor: var(--paragraph-font-color);
 
 $screen-xs: 320px;
 $screen-s: 480px;
@@ -10,11 +14,11 @@ $screen-m: 768px;
 $screen-l: 1024px;
 $screen-xl: 1200px;
 
-:export {
-  primaryColor: $primary-color;
-  screenXS: $screen-xs;
-  screenS: $screen-s;
-  screenM: $screen-m;
-  screenL: $screen-l;
-  screenXL: $screen-xl;
-}
+$fontRegular: "SFProRegular";
+$fontBlack: "SFProBlack";
+$fontHeavy: "SFProHeavy";
+$fontLight: "SFProLight";
+$fontMedium: "SFProMedium";
+$fontSemibold: "SFProSemibold";
+$fontThin: "SFProThin";
+$fontUltralight: "SFProUltralight";

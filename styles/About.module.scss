@@ -1,5 +1,5 @@
-@import '../styles/variables.module.scss';
-@import '../styles/mixin.module.scss';
+@import "../styles/variables.module.scss";
+@import "../styles/mixin.module.scss";
 
 .container {
   position: relative;
@@ -20,14 +20,17 @@
 .title {
   color: black;
   font-size: 5rem;
+  font-family: $fontSemibold;
+  color: $headerTwoFontColor;
 }
 
 .text {
-  color: black;
   font-size: 2rem;
   text-align: center;
   margin-top: 2rem;
   margin-bottom: 2rem;
+  font-family: $fontRegular;
+  color: $paragraphFontColor;
 }
 
 .link {

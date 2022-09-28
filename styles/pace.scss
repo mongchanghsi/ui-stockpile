@@ -1,3 +1,6 @@
+@import "../styles/variables.module.scss";
+@import "../styles/mixin.module.scss";
+
 .pace {
   -webkit-pointer-events: none;
   pointer-events: none;
@@ -43,7 +46,7 @@
   transform: translateX(-50%);
 
   content: "Loading \A"attr(data-progress-text);
-  font-family: "Lato", sans-serif;
+  font-family: $fontRegular;
   // font-style: italic;
   line-height: 1;
   white-space: pre;

@@ -1,3 +1,6 @@
+@import "../styles/variables.module.scss";
+@import "../styles/mixin.module.scss";
+
 .unselectable {
   -webkit-touch-callout: none;
   -webkit-user-select: none;
@@ -8,6 +11,7 @@
 }
 
 .main {
+  background-color: $backgroundColor;
   min-height: 100vh;
   display: flex;
   flex-direction: column;

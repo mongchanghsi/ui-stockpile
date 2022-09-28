@@ -1,9 +1,7 @@
 /* eslint-disable react/display-name */
 import { useRouter } from "next/router";
-import Link from "next/link";
-import { useEffect, useState, forwardRef } from "react";
+import { useEffect, useState, forwardRef, useContext } from "react";
 import styles from "../../styles/Component.module.scss";
-import { IoMdArrowBack } from "react-icons/io";
 
 import AzukiGridDisplay from "../../components/AzukiGridDisplay";
 import Accordion from "../../components/Accordion";
@@ -24,10 +22,12 @@ import MultilevelDropdown from "../../components/MultilevelDropdown";
 import RandomColorTextSelection from "../../components/RandomColorTextSelection";
 import ProxmityHover from "../../components/ProximityHover";
 import ProgressBar from "../../components/ProgressBar";
+import { ColorThemeContext } from "../../context/colorThemeContext";
+import Navigation from "../../components/Navigation";
 
 const renderComponent = (_componentName: ComponentTypeNames) => {
   return (
-    <div className={styles.container}>
+    <div className={styles.main}>
       <Description
         heading={ComponentNames[_componentName].title}
         description={ComponentNames[_componentName].desc}
@@ -62,31 +62,13 @@ const renderComponent = (_componentName: ComponentTypeNames) => {
   );
 };
 
-const RenderBrand = forwardRef(
-  (
-    {
-      onClick = undefined,
-      href = undefined,
-    }: { onClick: undefined; href: undefined },
-    ref: any
-  ) => {
-    return (
-      <IoMdArrowBack
-        href={href}
-        onClick={onClick}
-        size={50}
-        color="black"
-        style={{ cursor: "pointer" }}
-      />
-    );
-  }
-);
-
 const Component = () => {
   const router = useRouter();
   const [componentName, setComponentName] = useState<ComponentTypeNames>(
     ComponentTypeNames.ERROR404
   );
+  const { appState: ColorThemeState, appDispatch: ColorThemeDispatch } =
+    useContext(ColorThemeContext);
 
   useEffect(() => {
     if (router && router.query && router.query.name) {
@@ -98,13 +80,18 @@ const Component = () => {
   }, [router]);
 
   return (
-    <div>
+    <div
+      className={styles.container}
+      style={{
+        ["--background-color" as any]: `${ColorThemeState.colorCode.background_color}`,
+        ["--headerOne-font-color" as any]: `${ColorThemeState.colorCode.headerOne}`,
+        ["--headerTwo-font-color" as any]: `${ColorThemeState.colorCode.headerTwo}`,
+        ["--paragraph-font-color" as any]: `${ColorThemeState.colorCode.paragraph}`,
+      }}
+    >
       <Meta title={`UI Stockpile | ${componentName}`} />
-      <div className={styles.actionBar}>
-        <Link href="/" passHref>
-          <RenderBrand onClick={undefined} href={undefined} />
-        </Link>
-      </div>
+
+      <Navigation subPage />
       {renderComponent(componentName)}
     </div>
   );

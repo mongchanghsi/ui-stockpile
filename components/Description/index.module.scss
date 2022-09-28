@@ -1,23 +1,26 @@
-@import '../../styles/mixin.module.scss';
+@import "../../styles/variables.module.scss";
+@import "../../styles/mixin.module.scss";
 
 .desc {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  color: black;
   margin-bottom: 2rem;
 
   & h2 {
     font-size: 3rem;
-    color: black;
+    color: $headerTwoFontColor;
+    font-family: $fontSemibold;
 
     @include l {
       font-size: 4rem;
     }
   }
+
   & p {
     font-size: 2rem;
-    color: black;
+    color: $paragraphFontColor;
+    font-family: $fontRegular;
   }
 }

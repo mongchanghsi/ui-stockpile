@@ -6,6 +6,7 @@ import "../styles/nprogress.scss";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
 import LoaderContextProvider from "../context/loaderContext";
+import ColorThemeProvider from "../context/colorThemeContext";
 
 function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter();
@@ -19,7 +20,9 @@ function MyApp({ Component, pageProps }: AppProps) {
 
   return (
     <LoaderContextProvider>
-      <Component {...pageProps} />
+      <ColorThemeProvider>
+        <Component {...pageProps} />
+      </ColorThemeProvider>
     </LoaderContextProvider>
   );
 }
