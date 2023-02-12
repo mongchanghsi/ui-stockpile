@@ -1,0 +1,117 @@
+@import "../../styles/variables.module.scss";
+@import "../../styles/mixin.module.scss";
+
+.container {
+  position: relative;
+  width: 100vw;
+  background-color: white;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  padding-top: 3vh;
+  padding-bottom: 3vh;
+
+  padding-left: 10vw;
+  padding-right: 10vw;
+}
+
+.main {
+  position: relative;
+
+  width: 100%;
+  // width: 540px;
+  height: 100%;
+  // height: 100px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.tooltipBase {
+  position: relative;
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+
+  margin: 7.5px 0;
+  border-radius: 15px;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 15px;
+    border: 1px solid transparent;
+
+    background: linear-gradient(
+        to bottom,
+        rgba(255, 255, 255, 0.4),
+        rgba(255, 255, 255, 0.61) 51.87%,
+        rgba(255, 255, 255, 0.17) 100%
+      )
+      border-box;
+
+    -webkit-mask: linear-gradient(#fff 0 0) padding-box,
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+  }
+
+  &_content {
+    background: linear-gradient(
+        132.48deg,
+        rgba(10, 22, 45, 0.7) 14.97%,
+        rgba(6, 14, 45, 0.4) 86.05%
+      )
+      border-box;
+    border-radius: 15px;
+
+    padding: 15px;
+  }
+}
+
+.tooltipBase2 {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  // width: 100%;
+
+  border-radius: 20px;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 10px;
+    border: 1px solid transparent;
+
+    background: linear-gradient(
+        to bottom,
+        rgba(255, 255, 255, 0.4),
+        rgba(255, 255, 255, 0.61) 51.87%,
+        rgba(255, 255, 255, 0.17) 100%
+      )
+      border-box;
+
+    -webkit-mask: linear-gradient(#fff 0 0) padding-box,
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+  }
+}
