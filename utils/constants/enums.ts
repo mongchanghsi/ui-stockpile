@@ -7,6 +7,8 @@ export enum ComponentTypeNames {
   RANDOMCOLORTEXTSELECTION = "random-color-text-selection",
   PROGRESSBAR = "progress-bar",
   PROXIMITY = "proximity",
+  CHART = "chart",
+  CHARTV2 = "chartv2",
 }
 
 export const ComponentNames = {
@@ -62,6 +64,20 @@ export const ComponentNames = {
     title: "Progress Bar",
     desc: `Progress bar which includes animation on load`,
     url: "Progress-Bar",
+  },
+  [ComponentTypeNames.CHART]: {
+    label: "Chart",
+    href: ComponentTypeNames.CHART,
+    title: "Line Chart",
+    desc: `Line Chart built using ChartJS`,
+    url: "Chart",
+  },
+  [ComponentTypeNames.CHARTV2]: {
+    label: "Chart V2",
+    href: ComponentTypeNames.CHARTV2,
+    title: "Line Chart",
+    desc: `Line Chart built using Recharts`,
+    url: "ChartV2",
   },
   [ComponentTypeNames.ERROR404]: {
     label: "Error 404",

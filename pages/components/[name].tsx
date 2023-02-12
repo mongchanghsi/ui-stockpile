@@ -24,6 +24,8 @@ import ProxmityHover from "../../components/ProximityHover";
 import ProgressBar from "../../components/ProgressBar";
 import { ColorThemeContext } from "../../context/colorThemeContext";
 import Navigation from "../../components/Navigation";
+import Chart from "../../components/Chart";
+import ChartV2 from "../../components/ChartV2";
 
 const renderComponent = (_componentName: ComponentTypeNames) => {
   return (
@@ -50,6 +52,10 @@ const renderComponent = (_componentName: ComponentTypeNames) => {
             return <ProxmityHover />;
           case ComponentTypeNames.PROGRESSBAR:
             return <ProgressBar currentValue={50} maxValue={120} />;
+          case ComponentTypeNames.CHART:
+            return <Chart />;
+          case ComponentTypeNames.CHARTV2:
+            return <ChartV2 />;
           default:
             return <Error404Component />;
         }
